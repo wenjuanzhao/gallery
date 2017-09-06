@@ -1,0 +1,18 @@
+.home .ant-card-body {
+  padding: 10px 20px;
+}
+.home .movie_item {
+  width: 20%;
+}
+.home .carousel {
+  padding-bottom: 10px;
+}
+.home .carousel .slick-slide img {
+  width: 100%;
+}
+.home .column_header {
+  margin-top: 10px;
+}
+.home .ant-tabs-bar {
+  margin-bottom: 8px;
+}

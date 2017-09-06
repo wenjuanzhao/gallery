@@ -1,7 +1,5 @@
-const config={
-    api:"http://211.149.160.35",
-    menu_api:"/api/cate/cate_list",
-    banner_api:'/api/face/face_list',
-    list_api:'api/news/news_list?cid={0}&offset={1}'
-}
-export default config;
+export const SERVER_PATH="https://api.douban.com/v2/";
+export const LOGIN_PATH="https://newsapi.gugujiankong.com/Handler.ashx";
+export const MUSIC_LIST="http://p1.music.126.net/"
+export const DEFAULT_COUNT=4;
+export const DEFAULT_START=0;

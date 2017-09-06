@@ -1,0 +1,7 @@
+.Pages {
+  height: 24px;
+  line-height: 24px;
+}
+.Pages ul.ant-pagination {
+  float: right;
+}
