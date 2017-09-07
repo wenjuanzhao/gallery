@@ -1,12 +1,23 @@
 import Mock from "mockjs"
 const {Random} =Mock;
 export const comments=Mock.mock({
+    //属性名 生成规则  属性值
     'commentList|5':[{
         'id':'@natural',
-        'time':'@datatime(16-MM-dd HH:mm:ss)',
+        'time':'@datetime(16-MM-dd HH:mm:ss)',
         'name':'@cname',
         'content':'@cparagraph',
-        'url':Random.image('50*50',Random.color(),'#fff',Random.word(3,5))
+        'url':Random.image('50x50',Random.color(),'#fff',Random.word(3,5))
+    }]
+})
+export const commentsMore=Mock.mock({
+    //属性名 生成规则  属性值
+    'commentList|5':[{
+        'id':'@natural',
+        'time':'@datetime(16-MM-dd HH:mm:ss)',
+        'name':'@cname',
+        'content':'@cparagraph',
+        'url':Random.image('50x50',Random.color(),'#fff',Random.word(3,5))
     }]
 })
 export const musicTop=Mock.mock({
@@ -16,4 +27,20 @@ export const musicTop=Mock.mock({
             'title':'@ctitle(3,6)'
         }
     ]
+})
+export const message=Mock.mock({
+    'messageList|5-8':[{
+        'id':'@natural',
+        'title':'@ctitle(5,10)',
+        'name':'@name',
+        'url':Random.image('40x40',Random.color(),"#fff",Random.word(3,5))
+    }]
+})
+export const correlations=Mock.mock({
+    'correlationList|5-8':[{
+        'id':'@natural',
+        'title':'@ctitle(6,10)',
+        'name':'@name',
+        'url':Random.image('40x40',Random.color(),"#fff",Random.word(3,5))
+    }]
 })

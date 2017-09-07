@@ -6,17 +6,23 @@ import MovieContainer from "../containers/MovieContainer"
 import SpotContainer from "../containers/SpotContainer"
 import MusicContainer from "../containers/MusicContainer"
 import BookContainer from "../containers/BookContainer"
-import MovieDetaiContainer from "../containers/MovieDetaiContainer"
+
+
+const MovieDetailContainer = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/MovieDetaiContainer').default)
+    },'MovieDetailContainer')
+}
 const RootRouter=(
     <Router history={hashHistory}>
-        <Route path="/" components={AppContainer}>
-            <IndexRoute components={HomeContainer}/>
-            <Route path="index" components={HomeContainer}/>
-            <Route path="movie" components={MovieContainer}/>
-            <Route path="movie/:id" components={MovieDetaiContainer}/>
-            <Route path="spot"  components={SpotContainer}/>
-            <Route path="music" components={MusicContainer}/>
-            <Route path="book" components={BookContainer}/>
+        <Route path="/" component={AppContainer}>
+            <IndexRoute component={HomeContainer}/>
+            <Route path="index" component={HomeContainer}/>
+            <Route path="movie" component={MovieContainer}/>
+            <Route path="movie/:id" getComponent={MovieDetailContainer}/>
+            <Route path="spot"  component={SpotContainer}/>
+            <Route path="music" component={MusicContainer}/>
+            <Route path="book" component={BookContainer}/>
         </Route>
     </Router>
 )

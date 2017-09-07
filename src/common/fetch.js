@@ -25,5 +25,17 @@ export function fetch_spot(opt) {
     })
 
 }
+export function fetch_movieDetail(opt) {
+    if(!opt){
+        return false;
+    }
+    const REQUEST_PATH=`${config.SERVER_PATH}movie/subject/${opt.id}`;
+    const result=fetchJsonp(REQUEST_PATH)
+    return result.then(function (resp) {
+        return resp.json();
+    }).catch(function (error) {
+        console.log(error)
+    })
+}
 
 
